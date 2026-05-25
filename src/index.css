@@ -1,3 +1,20 @@
 @import "tailwindcss";
 
-@theme {}
+@theme {
+  --color-accent: #FF8C00;
+  --color-bg: #1E1E1E;
+  --color-surface: #242424;
+  --color-border: #2E2E2E;
+  --color-text-primary: #F5F5F5;
+  --color-text-muted: #A0A0A0;
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-logo: "Orbitron", sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
