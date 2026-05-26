@@ -6,7 +6,7 @@
   --color-surface: #242424;
   --color-border: #2E2E2E;
   --color-text-primary: #F5F5F5;
-  --color-text-muted: #A0A0A0;
+  --color-text-muted: #D0D0D0;
 
   --font-heading: "Poppins", sans-serif;
   --font-body: "Poppins", sans-serif;
@@ -17,4 +17,8 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
   font-family: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
 }
