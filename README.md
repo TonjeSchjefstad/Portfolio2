@@ -1,8 +1,9 @@
 # Portfolio 2 — Tonje Schjefstad
 
 ## Description
+This is my portfolio website, built as part of my second year of Frontend Development studies at Noroff. The site showcases three projects I've worked on during my studies, Alera Online Shop, Pulse Social Media App, and Maison Ardéne Auction House. Each project has a teaser card on the home page, and a dedicated article page with full details, links to the live site and GitHub repository.
 
-A multipage portfolio website showcasing three projects from my studies at Noroff. Each project is presented as a teaser card on the home page, with a dedicated article page containing full details, images, and links.
+The portfolio is built with React, TypeScript, Tailwind CSS, and Vite, using React Router for client-side navigation. It is deployed on Vercel.
 
 Live Demo: https://tonje-schjefstad.vercel.app/ 
 
