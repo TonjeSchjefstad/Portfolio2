@@ -1,3 +1,4 @@
+import { useForm} from "@formspree/react";
 import profileImage from "../assets/profile-image.webp";
 import officeImage from "../assets/office.webp";
 import { projects } from "../data/projects";
@@ -9,6 +10,7 @@ const allTags = ["All", "Next.js", "TypeScript", "Tailwind", "React", "JavaScrip
 
 export default function Home() {
   const [activeTag, setActiveTag] = useState("All");
+  const [state, handleSubmit] = useForm("mredrwna");
 
   const filteredProjects = activeTag === "All"
     ? projects
@@ -119,6 +121,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact */}
+      <section id="contact" className="bg-surface py-20">
+        <div className="max-w-6xl mx-auto px-8">
+          <h2 className="text-text-primary text-4xl font-bold mb-4">Contact Me</h2>
+          <p className="text-text-muted max-w-xl mb-12">
+            I'm currently looking for my first junior frontend role. Whether you have 
+            a question, an opportunity, or just want to say hi, feel free to reach out!
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-12">
+            <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+              className="bg-bg border border-border text-text-primary placeholder:text-text-muted px-4 py-3 rounded outline-none focus:border-accent transition-colors duration-200"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              className="bg-bg border border-border text-text-primary placeholder:text-text-muted px-4 py-3 rounded outline-none focus:border-accent transition-colors duration-200"
+            />
+            <textarea
+              name="message"
+              placeholder="Your message"
+              rows={5}
+              required
+              className="bg-bg border border-border text-text-primary placeholder:text-text-muted px-4 py-3 rounded outline-none focus:border-accent transition-colors duration-200 resize-none"
+            />
+            {state.succeeded ? (
+              <p className="text-accent font-medium">Thanks for reaching out! I'll get back to you soon.</p>
+            ) : (
+              <button
+                type="submit"
+                disabled={state.submitting}
+                className="bg-accent text-bg font-medium px-6 py-3 rounded hover:opacity-80 transition-opacity duration-200 self-start disabled:opacity-50"
+              >
+                {state.submitting ? "Sending..." : "Send message"}
+              </button>
+            )}
+          </form>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
