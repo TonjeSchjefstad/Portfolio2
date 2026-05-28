@@ -12,6 +12,7 @@ const navItems: NavItem[] = [
   { label: "Home", href: "/", isRoute: true },
   { label: "About me", href: "#about", isRoute: false },
   { label: "Projects", href: "#projects", isRoute: false },
+  { label: "Contact Me", href: "#contact", isRoute: false },
 ];
 
 export default function Header() {
@@ -47,6 +48,17 @@ export default function Header() {
               )}
             </li>
           ))}
+          <li>
+            <a
+              href="https://github.com/TonjeSchjefstad"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit my GitHub profile"
+              className="hover:text-text-primary transition-colors duration-200"
+            >
+              <i className="devicon-github-original text-2xl text-text-muted hover:text-text-primary transition-colors duration-200" />
+            </a>
+          </li>
         </ul>
 
         <button
@@ -88,6 +100,18 @@ export default function Header() {
               )}
             </li>
           ))}
+
+          <li>
+            <a
+              href="https://github.com/TonjeSchjefstad"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-text-primary transition-colors duration-200"
+            >
+              GitHub
+            </a>
+          </li>
         </ul>
       )}
     </nav>
