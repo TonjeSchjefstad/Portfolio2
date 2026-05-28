@@ -93,11 +93,22 @@ export default function ProjectDetail() {
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-border text-text-muted text-sm px-6 py-3 rounded text-center hover:text-text-primary hover:border-text-muted transition-colors duration-200"
+              className="border border-accent text-text-muted text-sm px-6 py-3 rounded text-center hover:text-text-primary hover:border-text-muted transition-colors duration-200"
             >
               GitHub
             </a>
           </div>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-text-primary text-xl font-semibold mb-4">
+            Features
+          </h2>
+          <ul className="list-disc list-inside text-text-muted leading-relaxed">
+            {project.features.map((feature, index) => (
+              <li key={index}>{feature}</li>
+            ))}
+          </ul>
         </div>
 
       </div>

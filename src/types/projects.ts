@@ -8,4 +8,5 @@ export interface Project {
   liveUrl: string;
   repoUrl: string;
   tags: string[];
+  features: string[];
 }
