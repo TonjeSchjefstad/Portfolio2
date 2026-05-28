@@ -32,7 +32,24 @@ export default function Home() {
                 Currently building my skills through hands on projects while focusing 
                 on user experience and writing maintainable code.
             </p>
+            <div className="flex gap-4 mt-8 justify-center md:justify-start">
+            <a
+              href="#contact"
+              className="bg-accent text-bg font-medium px-6 py-3 rounded hover:opacity-80 transition-opacity duration-200"
+            >
+              Contact me
+            </a>
+            <a
+              href="https://github.com/TonjeSchjefstad"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-border text-text-muted px-6 py-3 rounded hover:text-text-primary hover:border-accent transition-colors duration-200"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
+        
         <div className="shrink-0 flex justify-center">
             <img
                 src={profileImage}
