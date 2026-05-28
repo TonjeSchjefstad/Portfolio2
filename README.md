@@ -1,73 +1,107 @@
-# React + TypeScript + Vite
+# Portfolio 2 — Tonje Schjefstad
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This is my portfolio website, built as part of my second year of Frontend Development studies at Noroff. The site showcases three projects I've worked on during my studies, Alera Online Shop, Pulse Social Media App, and Maison Ardéne Auction House. Each project has a teaser card on the home page, and a dedicated article page with full details, links to the live site and GitHub repository.
 
-Currently, two official plugins are available:
+The portfolio is built with React, TypeScript, Tailwind CSS, and Vite, using React Router for client-side navigation. It is deployed on Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Live Demo: https://tonje-schjefstad.vercel.app/ 
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installing
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+```bash
+git clone https://github.com/TonjeSchjefstad/Portfolio2.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+npm install
 ```
+
+### Running
+
+Start the development server with:
+```bash
+npm run dev
+```
+
+Build for production:
+```bash
+npm run build
+```
+
+## Project Structure
+
+```bash
+├── public/
+│   └── favicon.png
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Header.tsx
+│   │   │   └── Footer.tsx
+│   │   ├── projects/
+│   │   │   └── ProjectCard.tsx
+│   │   └── ScrollToTop.tsx
+│   ├── data/
+│   │   └── projects.ts
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   ├── ProjectDetail.tsx
+│   │   └── NotFound.tsx
+│   ├── types/
+│   │   └── project.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── README.md
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+```
+
+## Folder Highlights
+
+- src/assets/ - Images and static files
+- src/components/ - Reusable UI components
+- src/data/ - Project data
+- src/pages/ - Page components
+- src/types/ - TypeScript interfaces
+
+## Tech Stack
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- React Router
+- Vercel
+
+## Projects Featured
+
+- **Alera Online Shop** - Next.js, TypeScript, Tailwind → [Live Demo](https://alera-online-shop.vercel.app/)
+- **Pulse Social Media App** - JavaScript, Tailwind → [Live Demo](https://pulse-social-media-app.netlify.app/#/)
+- **Maison Ardéne Auction House** - JavaScript, Tailwind → [Live Demo](https://maison-ardene.netlify.app/)
+
+## Site Features
+- Hero section
+- About Me section with background and tech skills
+- Project cards with filtering by technology
+- Project detail pages with live and GitHub links
+- Responsive design for mobile and desktop
+- Smooth scroll navigation
+
+## Contact
+
+### Tonje Schjefstad
+Frontend Development Student
+Noroff School of Technology and Digital Media
+
+- LinkedIn: https://www.linkedin.com/in/tonjeschjefstad/
+- GitHub: https://github.com/TonjeSchjefstad
+- Student email: tonsch03841@stud.noroff.no
+- Private email: Tonje_schjefen@hotmail.com
