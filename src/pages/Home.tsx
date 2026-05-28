@@ -6,7 +6,7 @@ import { useState } from "react";
 import type { Project } from "../types/projects";
 import ProjectCard from "../components/projects/ProjectCard";
 
-const allTags = ["All", "Next.js", "TypeScript", "Tailwind", "React", "JavaScript"];
+const allTags = ["All", "HTML", "CSS", "JavaScript", "Next.js", "TypeScript", "Tailwind", "React"];
 
 export default function Home() {
   const [activeTag, setActiveTag] = useState("All");

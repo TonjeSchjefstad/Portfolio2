@@ -3,6 +3,9 @@ import type { Project } from "../types/projects";
 import aleraImage from "../assets/alera.webp";
 import pulseImage from "../assets/pulse.webp";
 import auctionImage from "../assets/auctionhouse.webp";
+import rainyDaysImage from "../assets/rainydays.webp";
+import hotViewLabsImage from "../assets/hotviewlabs.webp";
+import scienceMuseumImage from "../assets/csm.webp";
 
 export const projects: Project[] = [
   {
@@ -66,6 +69,59 @@ export const projects: Project[] = [
       "Watchlist feature using localStorage",
       "Responsive mobile-first design",
       "Accessible navigation with ARIA labels",
+    ],
+  },
+  {
+    id: 4,
+    title: "HotView Labs",
+    description: "A modern, responsive tech blog platform where tech leaders can read about up-to-date insights on technology trends and innovations.",
+    detailedDescription: "A modern, responsive tech blog platform where tech leaders across the world can read about up-to-date insights about technology trends and innovations. This is an exam project designed to put everything I learned during FED1 into practice, interpreting a brief, planning a solution, designing a UI, and building a responsive web application.",
+    imageUrl: hotViewLabsImage,
+    imageCaption: "Screenshot of the HotView Labs homepage",
+    liveUrl: "https://hotviewlabs-tonjeschjefstad.netlify.app/",
+    repoUrl: "https://github.com/TonjeSchjefstad/FED1-PE1-Tonje-Schjefstad",
+    tags: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Responsive design across all devices",
+      "User authentication",
+      "Blog management",
+      "Interactive UI components",
+    ],
+  },
+  {
+    id: 5,
+    title: "Community Science Museum",
+    description: "An interactive and educational website designed to spark curiosity in young minds, built for primary and middle school children and families.",
+    detailedDescription: "An interactive and educational website designed to spark curiosity and wonder in young minds. Built specifically for primary and middle school children and families, this platform encourages museum visits through captivating design and accessible content. The site makes science accessible and exciting for young learners while providing practical information.",
+    imageUrl: scienceMuseumImage,
+    imageCaption: "Screenshot of the Community Science Museum homepage",
+    liveUrl: "https://tonjeschjefstad.github.io/SemesterProject1-Community-Science-Museum/",
+    repoUrl: "https://github.com/TonjeSchjefstad/SemesterProject1-Community-Science-Museum",
+    tags: ["HTML", "CSS"],
+    features: [
+      "Kid-friendly design with vibrant colors and engaging visuals",
+      "Intuitive navigation designed for easy access",
+      "Optimized images for fast loading",
+      "WCAG-compliant accessible design",
+      "Fully responsive across all devices",
+    ],
+  },
+  {
+    id: 6,
+    title: "Rainy Days",
+    description: "An e-commerce platform specializing in premium rain jackets for outdoor enthusiasts, with filtering, cart management and checkout.",
+    detailedDescription: "An e-commerce platform specializing in premium rain jackets for outdoor enthusiasts. Built as a cross-course project incorporating design principles, responsive layout and interactive JavaScript functionality. Integrates with the Noroff API for product data.",
+    imageUrl: rainyDaysImage,
+    imageCaption: "Screenshot of the Rainy Days homepage",
+    liveUrl: "https://tonjeschjefstad.github.io/Cross-Course-RainyDays/",
+    repoUrl: "https://github.com/TonjeSchjefstad/cross-course-rainydays",
+    tags: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Browse complete product collection",
+      "Detailed product information pages",
+      "Filter by gender, color, size and price",
+      "Add and remove items from cart",
+      "Checkout with cart summary",
     ],
   },
 ];
