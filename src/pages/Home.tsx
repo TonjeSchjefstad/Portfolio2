@@ -43,7 +43,7 @@ export default function Home() {
               href="https://github.com/TonjeSchjefstad"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-border text-text-muted px-6 py-3 rounded hover:text-text-primary hover:border-accent transition-colors duration-200"
+              className="border border-accent text-text-muted px-6 py-3 rounded hover:text-text-primary hover:border-accent transition-colors duration-200"
             >
               GitHub
             </a>
