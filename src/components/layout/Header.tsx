@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 type NavItem = {
@@ -17,6 +17,8 @@ const navItems: NavItem[] = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isProjectDetail = pathname.startsWith("/projects/");
 
   return (
     <nav className="w-full bg-surface border-b border-border px-8 py-4">
@@ -28,26 +30,37 @@ export default function Header() {
         </NavLink>
 
         <ul className="hidden md:flex items-center gap-8 text-sm text-text-muted">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              {item.isRoute ? (
-                <NavLink
-                  to={item.href}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-accent font-medium border-b-2 border-accent pb-1"
-                      : "hover:text-text-primary transition-colors duration-200"
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ) : (
-                <a href={item.href} className="hover:text-text-primary transition-colors duration-200">
-                  {item.label}
-                </a>
-              )}
+          {isProjectDetail ? (
+            <li>
+              <NavLink
+                to="/"
+                className="hover:text-text-primary transition-colors duration-200"
+              >
+                Home
+              </NavLink>
             </li>
-          ))}
+          ) : (
+            navItems.map((item) => (
+              <li key={item.label}>
+                {item.isRoute ? (
+                  <NavLink
+                    to={item.href}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-accent font-medium border-b-2 border-accent pb-1"
+                        : "hover:text-text-primary transition-colors duration-200"
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ) : (
+                  <a href={item.href} className="hover:text-text-primary transition-colors duration-200">
+                    {item.label}
+                  </a>
+                )}
+              </li>
+            ))
+          )}
           <li>
             <a
               href="https://github.com/TonjeSchjefstad"
@@ -75,32 +88,43 @@ export default function Header() {
 
       {isOpen && (
         <ul className="md:hidden flex flex-col gap-4 px-4 pt-4 pb-6 text-sm items-end text-text-muted border-t border-border mt-4">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              {item.isRoute ? (
-                <NavLink
-                  to={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-accent font-medium"
-                      : "hover:text-text-primary transition-colors duration-200"
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ) : (
-                <a
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="hover:text-text-primary transition-colors duration-200"
-                >
-                  {item.label}
-                </a>
-              )}
+          {isProjectDetail ? (
+            <li>
+              <NavLink
+                to="/"
+                onClick={() => setIsOpen(false)}
+                className="hover:text-text-primary transition-colors duration-200"
+              >
+                Home
+              </NavLink>
             </li>
-          ))}
-
+          ) : (
+            navItems.map((item) => (
+              <li key={item.label}>
+                {item.isRoute ? (
+                  <NavLink
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-accent font-medium"
+                        : "hover:text-text-primary transition-colors duration-200"
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ) : (
+                  <a
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="hover:text-text-primary transition-colors duration-200"
+                  >
+                    {item.label}
+                  </a>
+                )}
+              </li>
+            ))
+          )}
           <li>
             <a
               href="https://github.com/TonjeSchjefstad"
